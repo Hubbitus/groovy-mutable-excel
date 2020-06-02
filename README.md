@@ -41,17 +41,16 @@ See `info.hubbitus.FilterFromExcelTest.RowsWithHeader ReadXls per row. Like usag
 ## Read and update (write) file content!
 
 ```groovy
-			processExcel(
-				FilterFromExcelTest.getResource('/sample.xlsx').newInputStream()
-				,'simple'
-				,new File('changed.xlsx')
-				,1){
-				'Total:' != it['Enabled']?.value?.toString()?.trim()
-			}
-				.each{row->
-					row['One'] = 77 // !!!!
-					bufferWrite(row.toMap())
-				}
+processExcel(
+	FilterFromExcelTest.getResource('/sample.xlsx').newInputStream()
+	,'simple'
+	,new File('changed.xlsx')
+	,1){
+	'Total:' != it['Enabled']?.value?.toString()?.trim()
+}
+	.each{row->
+		row['One'] = 77 // !!!!
+	}
 ```
 
 Please note, value changed and written into file `changed.xlsx` automatically!
