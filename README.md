@@ -18,13 +18,14 @@ Please look at example [sample](src/main/resources/sample.xlsx) file:
 
 ```groovy
 readExcel(
-	new File('/sample.xlsx').newInputStream()){
+	new File('/sample.xlsx').newInputStream()){ // Filter rows of interest:
 		'Total:' != it['Enabled']?.value?.toString()?.trim()
 	}
-		.each{row->
-			println(row.toMap())
-			println("Column <Two> value: ${row['Two'].value}")
-		}
+	.each{row-> // Process each row. Iterator provided, so just call `each, collect`, `collectEntries` and other convenient methods
+		println(row.toMap())
+		// Access data in Map-style by bossiness names of columns:
+		println("Column <Two> value: ${row['Two'].value}")
+	}
 ```
 Output will be like:
 ```
@@ -45,10 +46,10 @@ processExcel(
 	FilterFromExcelTest.getResource('/sample.xlsx').newInputStream()
 	,'simple'
 	,new File('changed.xlsx')
-	,1){
-	'Total:' != it['Enabled']?.value?.toString()?.trim()
-}
-	.each{row->
+	,1){ // Filter rows of interest:
+		'Total:' != it['Enabled']?.value?.toString()?.trim()
+	}
+	.each{row-> // Process each row. Iterator provided, so just call `each, collect`, `collectEntries` and other convenient methods
 		row['One'] = 77 // !!!!
 	}
 ```
