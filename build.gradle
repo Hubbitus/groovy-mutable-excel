@@ -1,0 +1,35 @@
+plugins {
+	id 'groovy'
+	// https://imperceptiblethoughts.com/shadow/getting-started/#default-java-groovy-tasks
+	id 'com.github.johnrengelman.shadow' version '5.2.0'
+}
+
+group 'info.hubbitus'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+	jcenter()
+}
+
+dependencies {
+	implementation "org.codehaus.groovy:groovy:${groovyVersion}"
+	implementation "org.codehaus.groovy:groovy-xml:${groovyVersion}"
+
+	testImplementation "org.spockframework:spock-core:${spockVersion}"
+	testImplementation "org.codehaus.groovy:groovy:${groovyVersion}"
+	testImplementation "org.codehaus.groovy:groovy-xml:${groovyVersion}"
+
+	implementation "builders.dsl:spreadsheet-builder-poi:${spreadsheetBuilderVersion}"
+	implementation "builders.dsl:spreadsheet-builder-groovy:${spreadsheetBuilderVersion}"
+
+	implementation 'ch.qos.logback:logback-classic:1.2.3'
+}
+
+
+jar {
+	manifest {
+		attributes 'Main-Class': 'info.hubbitus.App'
+	}
+}

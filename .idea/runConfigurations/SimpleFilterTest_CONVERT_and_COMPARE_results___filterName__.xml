@@ -1,0 +1,31 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="SimpleFilterTest.CONVERT and COMPARE results [#filterName] " type="JUnit" factoryName="JUnit" singleton="false" nameIsGenerated="true">
+    <module name="filter15-convert.test" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="com.taskdata.util.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <extension name="net.ashald.envfile">
+      <option name="IS_ENABLED" value="false" />
+      <option name="IS_SUBST" value="false" />
+      <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+      <option name="IS_IGNORE_MISSING_FILES" value="false" />
+      <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+      <ENTRIES>
+        <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+      </ENTRIES>
+    </extension>
+    <option name="PACKAGE_NAME" value="com.taskdata" />
+    <option name="MAIN_CLASS_NAME" value="com.taskdata.SimpleFilterTest" />
+    <option name="METHOD_NAME" value="CONVERT and COMPARE results [#filterName] (oldCount=#oldFilterCount)" />
+    <option name="TEST_OBJECT" value="method" />
+    <option name="PARAMETERS" value="" />
+    <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+      <option name="BSP.BeforeRunTask" enabled="true" />
+    </method>
+  </configuration>
+</component>
