@@ -60,10 +60,10 @@ Please note, value changed and written into file `changed.xlsx` automatically!
 
 Fur build you may just run:
 
-	./gradlew hadowJar
+	./gradlew shadowJar
 
 Then just run as usual:
 
-	java -Xmx1400m -jar build/libs/groovy-mutable-excel-1.0-SNAPSHOT-all.jar
+	time java -Xmx1400m -jar build/libs/groovy-mutable-excel-1.0-SNAPSHOT-all.jar
 
 > **Warn**: Such run provided only for demo-purpose and use bundled in resources excel file.
